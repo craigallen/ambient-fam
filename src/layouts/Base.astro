@@ -14,7 +14,7 @@ const { title, description = 'Ambient Fam — an ambient music community' } = As
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title} | Ambient Fam</title>
+    <title>{title === 'Home' ? 'Ambient Fam' : `${title} | Ambient Fam`}</title>
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
@@ -23,11 +23,10 @@ const { title, description = 'Ambient Fam — an ambient music community' } = As
       <div class="container">
         <a href="/" class="site-logo">
           <img
-            src="https://ambientfam.com/wp-content/uploads/2023/04/af_logo.png"
-            alt="Ambient Fam logo"
-            width="36"
-            height="36"
-            onerror="this.style.display='none'"
+            src="https://ambientfam.com/wp-content/uploads/2023/04/af_circle.png"
+            alt="Ambient Fam"
+            width="40"
+            height="40"
           />
           <span>Ambient Fam</span>
         </a>
@@ -36,8 +35,6 @@ const { title, description = 'Ambient Fam — an ambient music community' } = As
           <a href="/interviews">Interviews</a>
           <a href="/events">Events</a>
           <a href="https://radio.ambientfam.net" target="_blank" rel="noopener">Radio</a>
-          <a href="https://www.instagram.com/ambient.fam/" target="_blank" rel="noopener">Instagram</a>
-          <a href="https://discord.gg/tsvewkfKEX" target="_blank" rel="noopener">Discord</a>
         </nav>
       </div>
     </header>
@@ -50,12 +47,29 @@ const { title, description = 'Ambient Fam — an ambient music community' } = As
 
     <footer>
       <div class="container">
-        <span>&copy; {new Date().getFullYear()} Ambient Fam</span>
+        <span class="footer-brand">Ambient Fam</span>
         <div class="footer-links">
-          <a href="https://ambientfam.bandcamp.com" target="_blank" rel="noopener">Bandcamp</a>
-          <a href="https://www.instagram.com/ambient.fam/" target="_blank" rel="noopener">Instagram</a>
-          <a href="https://discord.gg/tsvewkfKEX" target="_blank" rel="noopener">Discord</a>
-          <a href="https://linktr.ee/ambientfam" target="_blank" rel="noopener">Linktree</a>
+          <a href="https://ambientfam.bandcamp.com" target="_blank" rel="noopener" aria-label="Bandcamp">
+            <!-- Bandcamp icon -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M0 18.75l7.437-13.5H24l-7.438 13.5z"/>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/ambient.fam/" target="_blank" rel="noopener" aria-label="Instagram">
+            <!-- Instagram icon -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+          <a href="https://linktr.ee/ambientfam" target="_blank" rel="noopener" aria-label="Linktree">
+            <!-- Link icon -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+            </svg>
+          </a>
         </div>
       </div>
     </footer>

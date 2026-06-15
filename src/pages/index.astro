@@ -5,30 +5,56 @@ import PostCard from '../components/PostCard.astro';
 
 const allPosts = await getCollection('posts');
 const sorted = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-const recent = sorted.slice(0, 6);
+
+const musicPosts = sorted.filter(p => p.data.category === 'music').slice(0, 3);
+const interviewPosts = sorted.filter(p => p.data.category === 'interviews').slice(0, 3);
+const eventPosts = sorted.filter(p => p.data.category === 'events').slice(0, 3);
 ---
 
 <Base title="Home" description="Ambient Fam — an ambient music community on Twitch and beyond.">
-  <div class="home-hero">
-    <h1>Ambient Fam</h1>
-    <p>A community of ambient musicians streaming on Twitch and releasing music into the world.</p>
-  </div>
-
-  <section>
-    <div class="section-header">
-      <h2>Latest</h2>
-      <a href="/music">See all music →</a>
-    </div>
-    <div class="post-grid">
-      {recent.map(post => (
+  <section class="section">
+    <h2 class="section-title">Newest Releases</h2>
+    <div class="card-grid">
+      {musicPosts.map(post => (
         <PostCard
           title={post.data.title}
           slug={post.slug}
           pubDate={post.data.pubDate}
           category={post.data.category}
-          excerpt={post.data.excerpt}
           artist={post.data.artist}
+          image={post.data.image}
           bandcampLink={post.data.bandcampLink}
+        />
+      ))}
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Recent Interviews</h2>
+    <div class="card-grid">
+      {interviewPosts.map(post => (
+        <PostCard
+          title={post.data.title}
+          slug={post.slug}
+          pubDate={post.data.pubDate}
+          category={post.data.category}
+          image={post.data.image}
+          excerpt={post.data.excerpt}
+        />
+      ))}
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Events</h2>
+    <div class="card-grid">
+      {eventPosts.map(post => (
+        <PostCard
+          title={post.data.title}
+          slug={post.slug}
+          pubDate={post.data.pubDate}
+          category={post.data.category}
+          image={post.data.image}
         />
       ))}
     </div>
