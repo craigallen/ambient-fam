@@ -1,0 +1,24 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+
+const posts = await getCollection('posts', ({ data }) => data.category === 'events');
+const sorted = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<Base title="Events" description="Ambient Fam Twitch raid trains and events.">
+  <div class="page-header">
+    <h1>Events</h1>
+    <p>Twitch raid trains and community events.</p>
+  </div>
+  <div class="post-list">
+    {sorted.map(post => (
+      <a href={`/posts/${post.slug}`} class="post-list-item">
+        <h2>{post.data.title}</h2>
+        <time datetime={post.data.pubDate.toISOString()}>
+          {post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+        </time>
+      </a>
+    ))}
+  </div>
+</Base>
