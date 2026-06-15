@@ -2,6 +2,7 @@
 title: Scott Bennett
 pubDate: 2023-12-11
 category: interviews
+image: /images/Scott_Bennett.webp
 excerpt: Scott Bennett (And out of Weeks) talks generative looping, Chase Bliss Habit, Magic The Gathering, and his debut full-length album.
 ---
 

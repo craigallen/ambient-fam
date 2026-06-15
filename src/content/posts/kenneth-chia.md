@@ -2,6 +2,7 @@
 title: Kenneth Chia
 pubDate: 2024-04-22
 category: interviews
+image: /images/Ken-Chia.png
 excerpt: Kenneth Chia (The Missing Note) shares how ambient music helped him through a cancer diagnosis and how he turned guitar noodlings into a full-time music career.
 ---
 

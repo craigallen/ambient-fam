@@ -2,6 +2,7 @@
 title: Dan Tremblay
 pubDate: 2023-10-24
 category: interviews
+image: /images/dan_tremblay.webp
 excerpt: Dan Tremblay discusses his journey from piano lessons at age 6 to ambient music production, his love of videography, and the transformative Twitch music community.
 ---
 
