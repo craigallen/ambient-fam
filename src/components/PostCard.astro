@@ -10,10 +10,13 @@ interface Props {
   bandcampLink?: string;
 }
 
-const { title, slug, pubDate, category, excerpt, artist, image } = Astro.props;
+const { title, slug, pubDate, category, excerpt, artist, image, bandcampLink } = Astro.props;
+
+const href = bandcampLink ?? `/posts/${slug}`;
+const external = !!bandcampLink;
 ---
 
-<a href={`/posts/${slug}`} class="post-card">
+<a href={href} class="post-card" target={external ? '_blank' : undefined} rel={external ? 'noopener noreferrer' : undefined}>
   <div class="card-img-wrap">
     {image
       ? <img src={image} alt={title} loading="lazy" />
