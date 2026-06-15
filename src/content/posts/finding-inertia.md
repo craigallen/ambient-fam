@@ -4,4 +4,5 @@ pubDate: 2023-09-01
 category: music
 artist: Weathering Grains
 bandcampLink: https://weatheringgrains.bandcamp.com/album/finding-inertia
+image: https://ambientfam.com/wp-content/uploads/2023/09/finding-inertia.jpg
 ---

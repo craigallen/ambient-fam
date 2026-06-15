@@ -3,6 +3,7 @@ title: April 2023 Raid Train
 pubDate: 2023-04-13
 category: events
 excerpt: Friday April 14th raid train featuring TotoRobyn, The Missing Note, Kai West, and more.
+image: https://ambientfam.com/wp-content/uploads/2023/04/2023-04-14.png
 ---
 
 Date: Friday, April 14th
