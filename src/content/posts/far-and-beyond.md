@@ -4,4 +4,5 @@ pubDate: 2023-02-11
 category: music
 artist: The Missing Note
 bandcampLink: https://th3missingnot3.bandcamp.com/album/far-and-beyond
+image: /images/far_and_beyond-300x300.webp
 ---
