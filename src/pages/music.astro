@@ -12,15 +12,15 @@ const sorted = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.va
     <h1>Music</h1>
     <p>Releases from artists in the Ambient Fam community.</p>
   </div>
-  <div class="post-grid">
+  <div class="card-grid">
     {sorted.map(post => (
       <PostCard
         title={post.data.title}
         slug={post.slug}
         pubDate={post.data.pubDate}
         category={post.data.category}
-        excerpt={post.data.excerpt}
         artist={post.data.artist}
+        image={post.data.image}
         bandcampLink={post.data.bandcampLink}
       />
     ))}
