@@ -1,0 +1,63 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Ambient Fam — an ambient music community' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} | Ambient Fam</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <a href="/" class="site-logo">
+          <img
+            src="https://ambientfam.com/wp-content/uploads/2023/04/af_logo.png"
+            alt="Ambient Fam logo"
+            width="36"
+            height="36"
+            onerror="this.style.display='none'"
+          />
+          <span>Ambient Fam</span>
+        </a>
+        <nav>
+          <a href="/music">Music</a>
+          <a href="/interviews">Interviews</a>
+          <a href="/events">Events</a>
+          <a href="https://radio.ambientfam.net" target="_blank" rel="noopener">Radio</a>
+          <a href="https://www.instagram.com/ambient.fam/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://discord.gg/tsvewkfKEX" target="_blank" rel="noopener">Discord</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <slot />
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <span>&copy; {new Date().getFullYear()} Ambient Fam</span>
+        <div class="footer-links">
+          <a href="https://ambientfam.bandcamp.com" target="_blank" rel="noopener">Bandcamp</a>
+          <a href="https://www.instagram.com/ambient.fam/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://discord.gg/tsvewkfKEX" target="_blank" rel="noopener">Discord</a>
+          <a href="https://linktr.ee/ambientfam" target="_blank" rel="noopener">Linktree</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

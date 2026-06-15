@@ -1,0 +1,26 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import PostCard from '../components/PostCard.astro';
+
+const posts = await getCollection('posts', ({ data }) => data.category === 'interviews');
+const sorted = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<Base title="Interviews" description="Interviews with ambient musicians from the Ambient Fam community.">
+  <div class="page-header">
+    <h1>Interviews</h1>
+    <p>Conversations with ambient musicians in our community.</p>
+  </div>
+  <div class="post-grid">
+    {sorted.map(post => (
+      <PostCard
+        title={post.data.title}
+        slug={post.slug}
+        pubDate={post.data.pubDate}
+        category={post.data.category}
+        excerpt={post.data.excerpt}
+      />
+    ))}
+  </div>
+</Base>
